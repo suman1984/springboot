@@ -7,8 +7,8 @@
     <artifactId>gs-spring-boot</artifactId>
     <version>0.1.0</version>
 	<scm>
-      <url>https://git-codecommit.us-east-1.amazonaws.com/v1/repos/MavenRelease</url>
-      <connection>scm:git:https://git-codecommit.us-east-1.amazonaws.com/v1/repos/MavenRelease</connection>
+      <url>https://github.com</url>
+      <connection>scm:git:https://github.com/suman1984/springboot.git</connection>
       <tag>v${releaseVersion}</tag>
    </scm>
    <!-- Repository Information -->
