@@ -5,8 +5,9 @@
 
 CONTAINERNAME=$1
 PORTMAPPING=$2
-TAG=$3
-JARFILE=$4
+PORTMAPPINGDOCKER=$3
+TAG=$4
+JARFILE=$5
 echo "CONTAINERNAME = $CONTAINERNAME"
 echo "PORTMAPPING = $PORTMAPPING"
 echo "JARFILE = $JARFILE"
@@ -26,13 +27,13 @@ if [ $(sudo docker ps -a | grep $CONTAINERNAME | wc -l) -gt 0 ];then
 fi
 echo " -------------------------- LISTING DOCKER ALL CONTAINERS BEFORE START --------------------------"
 echo "$(sudo docker ps -a)"
-sudo docker run --name $CONTAINERNAME -d -p $PORTMAPPING:8080 $CONTAINERNAME:$TAG
+sudo docker run --name $CONTAINERNAME -d -p $PORTMAPPING:$PORTMAPPINGDOCKER $CONTAINERNAME:$TAG
 echo " -------------------------- LISTING RUNNING DOCKER CONTAINER $CONTAINERNAME AFTER START --------------------------"
 echo "$(sudo docker ps | grep $CONTAINERNAME)"
 
-# Deployment.sh springboot-dev 8090 gs-spring-boot-0.1.0.jar
-# Deployment.sh springboot-stage 8091 gs-spring-boot-0.1.0.jar
-# Deployment.sh springboot-prod 8092 gs-spring-boot-0.1.0.jar
+# Deployment.sh springboot-dev 8090 latest gs-spring-boot-0.1.0.jar
+# Deployment.sh springboot-stage 8091 latest gs-spring-boot-0.1.0.jar
+# Deployment.sh springboot-prod 8092 latest gs-spring-boot-0.1.0.jar
 
 
 

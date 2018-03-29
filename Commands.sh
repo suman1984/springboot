@@ -6,6 +6,8 @@ sudo docker build --build-arg JAR=gs-spring-boot-0.1.0.jar  -t springboot-dev:la
 sudo docker build --build-arg JAR=gs-spring-boot-0.1.0.jar  -t springboot-stage:latest .
 sudo docker build --build-arg JAR=gs-spring-boot-0.1.0.jar  -t springboot-prod:latest .
 
+sudo docker build --build-arg JAR=otcr-user-service-0.0.1-SNAPSHOT.jar  -t otcr-user-service-dev:latest .
+
 
 
 
@@ -16,12 +18,20 @@ sudo docker run --name springboot-stage -d -p 8091:8080 springboot-stage:latest
 sudo docker run --name springboot-prod -d -p 8092:8080 springboot-prod:latest
 
 
+sudo docker run --name otcr-user-service-dev -d -p 8095:8080 otcr-user-service-dev:latest
+
+
 
 
 
 DEV	:	http://35.172.135.138:8090/
+
 STAGE:	http://35.172.135.138:8091/
 PROD:	http://35.172.135.138:8092/
+
+otcr-user-service
+
+DEV:	http://35.172.135.138:8095/
 
 
 sudo docker run --name springboot-dev -d -p 8080:8080 springboot:dev
