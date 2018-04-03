@@ -9,6 +9,9 @@ sudo docker build --build-arg JAR=gs-spring-boot-0.1.0.jar  -t springboot-prod:l
 sudo docker build --build-arg JAR=otcr-user-service-0.0.1-SNAPSHOT.jar  -t otcr-user-service-dev:latest .
 
 
+sudo docker build --build-arg JAR=otcr-user-service-0.0.1-SNAPSHOT.jar  -t otcr-user-service-dev:latest .
+
+
 
 
 
@@ -18,20 +21,37 @@ sudo docker run --name springboot-stage -d -p 8091:8080 springboot-stage:latest
 sudo docker run --name springboot-prod -d -p 8092:8080 springboot-prod:latest
 
 
-sudo docker run --name otcr-user-service-dev -d -p 8095:8080 otcr-user-service-dev:latest
+sudo docker run --name otcr-user-service-dev -d -p 8095:9090 otcr-user-service-dev:latest
+sudo docker run --name otcr-user-service-stage -d -p 8096:9090 otcr-user-service-stage:latest
+sudo docker run --name otcr-user-service-prod -d -p 8097:9090 otcr-user-service-prod:latest
+
+
+sudo docker run --name otcr-definition-service-dev -d -p 8098:8085 otcr-definition-service-dev:latest
+sudo docker run --name otcr-definition-service-stage -d -p 8099:8085 otcr-definition-service-stage:latest
+sudo docker run --name otcr-definition-service-prod -d -p 8100:8085 otcr-definition-service-prod:latest
 
 
 
 
 
-DEV	:	http://35.172.135.138:8090/
-
-STAGE:	http://35.172.135.138:8091/
-PROD:	http://35.172.135.138:8092/
+Spring boot demo
+DEV	:	http://52.90.137.48:8090/
+STAGE:	http://52.90.137.48:8091/
+PROD:	http://52.90.137.48:8092/
 
 otcr-user-service
 
-DEV:	http://35.172.135.138:8095/
+DEV:	http://52.90.137.48:8095/
+STAGE:	http://52.90.137.48:8096/
+PROD:	http://52.90.137.48:8097/
+
+otcr-user-service
+
+DEV:	http://52.90.137.48:8098/
+STAGE:	http://52.90.137.48:8099/
+PROD:	http://52.90.137.48:8100/
+
+PROD:	http://52.90.137.48:8085/
 
 
 sudo docker run --name springboot-dev -d -p 8080:8080 springboot:dev

@@ -16,13 +16,13 @@
       <snapshotRepository>
          <id>snapshots</id>
          <name>artifactory-snapshots</name>
-         <url>http://35.172.135.138:8081/artifactory/libs-snapshot</url>
+         <url>http://52.90.137.48:8081/artifactory/libs-snapshot</url>
          <uniqueVersion>false</uniqueVersion>
       </snapshotRepository>
       <repository>
          <id>central</id>
          <name>artifactory-releases</name>
-         <url>http://35.172.135.138:8081/artifactory/libs-release</url>
+         <url>http://52.90.137.48:8081/artifactory/libs-release</url>
       </repository>
    </distributionManagement>
     <parent>
@@ -74,7 +74,7 @@
 						</executions>
 						<configuration>
 							<serverId>snapshots</serverId>
-							<nexusUrl>http://35.172.135.138:8081/</nexusUrl>
+							<nexusUrl>http://52.90.137.48:8081/</nexusUrl>
 							<skipStaging>true</skipStaging>
 						</configuration>
 					</plugin>
